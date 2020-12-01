@@ -1,0 +1,29 @@
+.text {
+    height: 25px;
+    background-color: rgba(128, 128, 128, 0.233);
+    border-color: whitesmoke;
+    border-radius: 15px;
+    outline: none;
+    width: 400px;
+    color: skyblue;
+    font-size: large;
+    text-align: center;
+}
+
+.submit {
+    height: 25px;
+    margin-top: 25px;
+    border-radius: 15px;
+    width: 80px;
+    height: 35px;
+    color: skyblue;
+    background-color: rgba(128, 128, 128, 0.233);
+    outline-style: none;
+    border: none;
+    font-size: large;
+}
+
+.submit:hover {
+    background-color: brown;
+    transition: 0.2s;
+}
