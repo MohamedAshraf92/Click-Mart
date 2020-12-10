@@ -1,0 +1,15 @@
+.layout-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .left-side {
+    width: 20%;
+}
+
+.right-side {
+    width: 70%;
+} */

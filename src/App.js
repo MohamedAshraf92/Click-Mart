@@ -4,31 +4,18 @@ import { useSelector } from 'react-redux';
 
 import './App.css';
 import LoginPage from './containers/loginPage/loginPage'
-import BuyerStore from './containers/buyerStore/buyerStore'
-import SellerStore from './containers/sellerStore/sellerStore'
+import StoreLayout from './containers/storeLayout/storeLayout'
 
 const App = (props) => {
 
     const isLogged = useSelector(state => state.loginReducer.isLogged)
-    const isSeller = useSelector(state => state.loginReducer.user.isSeller)
-
-    let routeComponent = <LoginPage/>
-
-    if (isLogged) {
-        if (isSeller) {
-            routeComponent = <Redirect to='/sellerStore' />
-        } else {
-            routeComponent = <Redirect to='/buyerStore' />
-        }
-    }
 
     return (
         <Switch>
             <Route exact path='/' >
-                {routeComponent}
+                { isLogged ? <Redirect to='/store' /> : <LoginPage/> }
             </Route>
-            <Route path='/sellerStore' exact component={SellerStore} />
-            <Route path='/buyerStore' exact component={BuyerStore} />
+            <Route path='/store' exact component={StoreLayout} />
         </Switch>
     );
 }

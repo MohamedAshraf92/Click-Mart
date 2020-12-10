@@ -1,0 +1,50 @@
+.card {
+    width: 250px;
+    height: 370px;
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.photo {
+    width: 230px;
+    margin: 10px;
+}
+
+.photo img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.prod-name {
+    text-align: center;
+    margin: 5px auto;
+}
+
+.prod-disc {
+    text-align: center;
+    margin: 5px auto;
+}
+
+.price {
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 5px auto;
+}
+
+.curency {
+    font-size: small;
+}
+
+.card-btn {
+    background-color: darkslateblue;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    margin: 5px auto;
+    text-align: center;
+}

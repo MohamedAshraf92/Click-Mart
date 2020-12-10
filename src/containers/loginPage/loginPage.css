@@ -1,4 +1,4 @@
-.container {
+.login-container {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -14,14 +14,14 @@
     background-size: cover;
 }
 
-h1 {
+.welcome {
     font-family: 'Indie Flower', cursive;
     font-size: 60px;
     color: cornflowerblue;
     margin-bottom: 10px;
 }
 
-h2 {
+.subtext {
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
     color: cornflowerblue;
