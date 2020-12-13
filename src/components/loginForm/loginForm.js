@@ -11,7 +11,7 @@ const LoginForm = props => {
     const dispatch = useDispatch()
     const [enteredEmail, setEnteredEmail] = useState('')
 
-    const LoginHandler = () => axios.get('/users')
+    const LoginHandler = () => {axios.get('/users')
         .then(res => {
             const user = res.data.find(user => user.email === enteredEmail)
             console.log(user)
@@ -21,6 +21,7 @@ const LoginForm = props => {
             } else {window.alert('User dosen\'t exist')}
         })
         .catch(error => {window.alert('Can\'t get users data')})
+    }
 
     return (
         <Auxiliary>
