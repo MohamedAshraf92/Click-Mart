@@ -14,7 +14,6 @@ const LoginForm = props => {
     const LoginHandler = () => {axios.get('/users')
         .then(res => {
             const user = res.data.find(user => user.email === enteredEmail)
-            console.log(user)
             if (user) {
                 const isLogged = true
                 dispatch(login(user, isLogged))

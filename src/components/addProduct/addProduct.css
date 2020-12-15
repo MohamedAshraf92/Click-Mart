@@ -1,0 +1,12 @@
+.add-product-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.add-product-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

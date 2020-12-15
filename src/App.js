@@ -17,12 +17,10 @@ const App = (props) => {
             <Route exact path='/' >
                 { isLogged ? <Redirect to='/store' /> : <LoginPage/> }
             </Route>
-            <Route path='/store'>
-                <StoreLayout>
-                <Route path='/addProduct' component={AddProduct} />
-                <Route path='/' component={ProductsContainer} />
-                </StoreLayout>
-            </Route>
+            <StoreLayout>
+                <Route exact path='/addProduct' component={AddProduct} />
+                <Route exact path='/store' component={ProductsContainer} />
+            </StoreLayout>
             <Route component={() => {return(<h1>NOT FOUND</h1>)}} />
         </Switch>
     );
