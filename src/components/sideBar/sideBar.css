@@ -1,5 +1,13 @@
 .side-bar {
-    width: 15%;
+    width: 17%;
     height: 400px;
-    background-color: dimgrey;
+    background-color: rgb(137, 184, 223);
+    border-radius: 15px;
 }
+
+
+/* @media (min-width: 992px) {
+    .side-bar {
+        width: 10rem;
+    }
+} */

@@ -7,7 +7,7 @@ import SideBar from '../../components/sideBar/sideBar'
 const StoreLayout = (props) => {
 
     return (
-        <div>
+        <div className='outer-frame'>
             <NavigationBar/>
             <div className="layout-container" >
                 <SideBar/>

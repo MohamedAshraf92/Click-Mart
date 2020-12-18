@@ -1,0 +1,44 @@
+.edit-product {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.photo-edit-product {
+    width: 49%;
+}
+
+.photo-edit-product img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.edit-info {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.edit-info h1 {
+    margin-bottom: 0;
+}
+
+.edit-info p {
+    margin: 10px 0;
+}
+
+.edit-price,
+.edit-amount {
+    margin: 10px 0;
+}
+
+
+.edit-sale {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

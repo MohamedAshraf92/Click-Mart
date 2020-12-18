@@ -1,6 +1,6 @@
 .card {
-    width: 250px;
-    height: 370px;
+    width: 24%;
+    height: 22rem;
     background-color: cornflowerblue;
     border-radius: 20px;
     display: flex;
@@ -10,8 +10,8 @@
 }
 
 .photo {
-    width: 230px;
-    margin: 10px;
+    width: 92%;
+    margin: 10px auto;
 }
 
 .photo img {
@@ -21,30 +21,34 @@
 
 .prod-name {
     text-align: center;
-    margin: 5px auto;
+    margin: auto;
 }
 
 .prod-disc {
     text-align: center;
-    margin: 5px auto;
+    margin: auto;
 }
 
 .price {
     text-align: center;
     font-weight: bold;
     font-size: xx-large;
-    margin: 5px auto;
+    margin: auto;
 }
 
 .curency {
     font-size: small;
 }
 
-.card-btn {
+.card-btn:link,
+.card-btn:visited {
     background-color: darkslateblue;
     height: 40px;
     width: 100px;
     border-radius: 10px;
-    margin: 5px auto;
+    margin:0 auto 10px auto;
     text-align: center;
+    text-decoration: none;
+    line-height: 35px;
+    color: whitesmoke;
 }

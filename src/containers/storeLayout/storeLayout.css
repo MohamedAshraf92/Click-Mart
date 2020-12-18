@@ -1,7 +1,13 @@
-.layout-container {
+.outer-frame {
     width: 100%;
+    box-sizing: border-box;
+}
+
+.layout-container {
+    width: 80%;
     height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: auto;
 }

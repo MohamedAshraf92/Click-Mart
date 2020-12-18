@@ -1,12 +1,16 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Modal from 'react-modal'
 
 import './App.css';
 import LoginPage from './containers/loginPage/loginPage'
 import StoreLayout from './containers/storeLayout/storeLayout'
 import AddProduct from './components/addProduct/addProduct'
 import ProductsContainer from './containers/productsContainer/productsContainer'
+import EditProduct from './components/editProduct/editProduct'
+
+Modal.setAppElement('#root')
 
 const App = (props) => {
 
@@ -20,6 +24,7 @@ const App = (props) => {
             <StoreLayout>
                 <Route exact path='/addProduct' component={AddProduct} />
                 <Route exact path='/store' component={ProductsContainer} />
+                <Route exact path='/editProduct/:id' component={EditProduct} />
             </StoreLayout>
             <Route component={() => {return(<h1>NOT FOUND</h1>)}} />
         </Switch>
