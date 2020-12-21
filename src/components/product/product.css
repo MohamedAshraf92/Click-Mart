@@ -1,0 +1,30 @@
+.product {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.photo-product {
+    width: 49%;
+}
+
+.photo-product img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.product-info {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.product-info h1 {
+    margin-bottom: 0;
+}
+
+.product-info p {
+    margin: 10px 0;
+}

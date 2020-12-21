@@ -6,8 +6,14 @@
 }
 
 
-/* @media (min-width: 992px) {
+@media (max-width: 992px) {
     .products-container {
-        width: 60rem;
+        width: 70%;
     }
-} */
+}
+
+@media (max-width: 480px) {
+    .products-container {
+        width: 70%;
+    }
+}

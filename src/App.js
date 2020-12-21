@@ -9,6 +9,8 @@ import StoreLayout from './containers/storeLayout/storeLayout'
 import AddProduct from './components/addProduct/addProduct'
 import ProductsContainer from './containers/productsContainer/productsContainer'
 import EditProduct from './components/editProduct/editProduct'
+import Product from './components/product/product'
+import ShoppingCart from './containers/shoppingCart/shoppingCart'
 
 Modal.setAppElement('#root')
 
@@ -24,6 +26,8 @@ const App = (props) => {
             <StoreLayout>
                 <Route exact path='/addProduct' component={AddProduct} />
                 <Route exact path='/store' component={ProductsContainer} />
+                <Route exact path='/store/:id' component={Product} />
+                <Route exact path='/shoppingCart' component={ShoppingCart} />
                 <Route exact path='/editProduct/:id' component={EditProduct} />
             </StoreLayout>
             <Route component={() => {return(<h1>NOT FOUND</h1>)}} />

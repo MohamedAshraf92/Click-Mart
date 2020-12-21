@@ -1,13 +1,37 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { NavLink, useHistory } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
 import './navigationBar.css'
 import Logo from '../logo'
+import defualtIMG from '../../assets/defaultIMG.png'
+import { signOut } from '../../store/actions/loginActions'
+import MdCart from 'react-ionicons/lib/MdCart'
 
 const NavigationBar = (props) => {
 
-    const userIsSeller = useSelector(state => state.loginReducer.user.isSeller)
+    const user = useSelector(state => state.loginReducer.user)
+    const userIsSeller = user.isSeller
+    const cartItemsCount = user.shoppingCart.length
+    const dispatch = useDispatch()
+
+    const [src, setSrc] = useState(user.avatar)
+    const [errored, setErrored] = useState(false)
+
+    const history = useHistory()
+
+    const signOutHandler = () => {
+        const isLogged = false
+        dispatch(signOut(isLogged))
+        history.replace('/')
+    }
+
+    const onErrorHandler = () => {
+        if (!errored) {
+            setSrc(defualtIMG)
+            setErrored(true)
+        }
+    }
 
     if (userIsSeller) {
         return (
@@ -22,12 +46,16 @@ const NavigationBar = (props) => {
                             <NavLink className='link' to='/addProduct'>Add Product</NavLink>
                         </li>
                         <li>
-                            <NavLink className='link' to='/help'>Log out</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className='link' to=''>Sign out</NavLink>
+                            <button className='link' onClick={signOutHandler}>Sign out</button>
                         </li>
                     </ul>
+                    <div className='nav-profile-picture'>
+                        <img 
+                        src={src} 
+                        alt='user profile avatar'
+                        onError={onErrorHandler}
+                        />
+                    </div>
                 </div>
             </div>
         )
@@ -39,17 +67,25 @@ const NavigationBar = (props) => {
                     <p>Click Mart</p>
                 </div>
                 <div className='nav-items'>
+                    <div className='cart-plugin'>
+                        <MdCart className='cart-icon' color='whitesmoke'/>
+                        <p>{cartItemsCount}</p>
+                    </div>
                     <ul>
                         <li>
                             <NavLink exact className='link' to='/shoppingCart'>Shopping Cart</NavLink>
                         </li>
                         <li>
-                            <NavLink className='link' to='/addProduct'>Log out</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className='link' to=''>Sign out</NavLink>
+                            <button className='link' onClick={signOutHandler}>Sign out</button>
                         </li>
                     </ul>
+                    <div className='nav-profile-picture'>
+                        <img 
+                            src={src} 
+                            alt='user profile avatar'
+                            onError={onErrorHandler}
+                        />
+                    </div>
                 </div>
             </div>
         )

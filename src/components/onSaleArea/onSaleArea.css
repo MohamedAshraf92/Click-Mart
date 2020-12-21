@@ -1,0 +1,12 @@
+.onsale-area {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+/* .onsale-area div {
+    margin-right: 10px;
+} */

@@ -21,24 +21,129 @@
     justify-content: flex-start;
 }
 
-.edit-info h1 {
-    margin-bottom: 0;
+.info-edit-product h1 {
+    margin: 0;
 }
 
 .edit-info p {
     margin: 10px 0;
 }
 
+.info-edit-product,
 .edit-price,
-.edit-amount {
-    margin: 10px 0;
+.edit-amount,
+.edit-sale {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: cornflowerblue;
+    border-radius: 15px;
 }
 
+.edit-price h3,
+.edit-amount h3 {
+    margin: 0 0 15px 0;
+}
 
+.edit-sale h3 {
+    margin: 0;
+}
+
+.edit-price-ctrl,
+.edit-amount-ctrl,
 .edit-sale {
-    width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.edit-price-ctrl button,
+.edit-amount-ctrl button,
+.edit-sale button {
+    width: 35%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: teal;
+    color: whitesmoke;
+}
+
+.edit-price-ctrl input,
+.edit-amount-ctrl input {
+    height: 25px;
+    width: 50%;
+    background-color: teal;
+    border-radius: 10px;
+    border: none;
+    color: whitesmoke;
+    padding-left: 20px;
+}
+
+.edit-price-ctrl input:focus,
+.edit-amount-ctrl input:focus {
+    outline: none;
+}
+
+.edit-price-ctrl input::-webkit-input-placeholder,
+.edit-amount-ctrl input::-webkit-input-placeholder {
+    color: whitesmoke;
+}
+
+.delete-product-btn {
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: teal;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.delete-product-btn:focus {
+    outline: none;
+}
+
+.delete-product-modal {
+    width: 30%;
+    height: 25%;
+    margin-top: 20%;
+    margin-left: 35%;
+    padding: 10px;
+    background-color: teal;
+    color: wheat;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.delete-product-modal h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.delete-product-modal button {
+    width: 30%;
+    height: 40px;
+    background-color: turquoise;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.delete-product-modal button:focus {
+    outline: none;
+}
+
+@media (max-width: 480px) {
+    .edit-price-ctrl,
+    .edit-amount-ctrl,
+    .edit-sale,
+    .edit-product {
+        flex-direction: column;
+    }
 }

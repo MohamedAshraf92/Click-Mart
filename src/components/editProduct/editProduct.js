@@ -70,7 +70,6 @@ const EditProduct = ({ match }) => {
         .then((res) => {
             setProduct(res.data)
             window.alert('Onsale state changed')
-            console.log(sale)
         })
         .catch(err => window.alert('WRONG'))
     }
@@ -95,29 +94,35 @@ const EditProduct = ({ match }) => {
                 <img src={product.productImage} alt={product.product} />
             </div>
             <div className='edit-info'>
-                <h1>{product.product}</h1>
-                <p>{product.productDescription}</p>
-                <p>Created at: {date}</p>
+                <div className='info-edit-product'>
+                    <h1>{product.product}</h1>
+                    <p>{product.productDescription}</p>
+                    <p>Created at: {date}</p>
+                </div>
                 <div className='edit-price'>
                     <h3>{product.productPrice} <span>{currency}</span></h3>
                     <h3>Want to edit the price?</h3>
-                    <input type='number' placeholder='Enter new price' value={newPrice} onChange={(event) => setNewPrice(event.target.value)} />
-                    <button onClick={priceChangeHandler}>EDIT PRICE</button>
+                    <div className='edit-price-ctrl'>
+                        <input type='number' placeholder='Enter new price' value={newPrice} onChange={(event) => setNewPrice(event.target.value)} />
+                        <button onClick={priceChangeHandler}>EDIT PRICE</button>
+                    </div>
                 </div>
                 <div className='edit-amount'>
                     <h3>Available in stock: {product.productCount} pieces</h3>
                     <h3>Want to change the product amount?</h3>
-                    <input type='number' placeholder='Enter new amount' value={newAmount} onChange={(event) => setNewAmount(event.target.value)} />
-                    <button onClick={amountChangeHandler}>EDIT count</button>
+                    <div className='edit-amount-ctrl'>
+                        <input type='number' placeholder='Enter new amount' value={newAmount} onChange={(event) => setNewAmount(event.target.value)} />
+                        <button onClick={amountChangeHandler}>EDIT COUNT</button>
+                    </div>
                 </div>
                 <div className='edit-sale'>
                     <h3>Apply Sale?</h3>
                     <input type='checkbox' defaultChecked={product.onSale} onChange={(event) => setSale(event.target.checked)} />
-                    <button onClick={applySaleHnadler}>Confirm</button>
+                    <button onClick={applySaleHnadler}>CONFIRM</button>
                 </div>
-                <button onClick={deletProduct}>DELETE PRODUCT</button>
+                <button className='delete-product-btn' onClick={deletProduct}>DELETE PRODUCT</button>
             </div>
-            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+            <Modal className='delete-product-modal' isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
                 <h2>PRODUCT DATA WILL BE DELETED</h2>
                 <h2>Confirm to delete</h2>
                 <button onClick={confirmHandler}>CONFIRM</button>

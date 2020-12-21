@@ -1,10 +1,10 @@
 import React from 'react'
 
-import './productsArea.css'
+import './onSaleArea.css'
 import Card from '../card/card'
 
-const ProductsArea = (props) => {
-    const cards = props.products.map(product => (
+const OnSaleArea = (props) => {
+    const cards = props.onSaleProducts.map(product => (
         <Card 
             id={product.id}
             photo={product.productImage}
@@ -13,15 +13,14 @@ const ProductsArea = (props) => {
             price={product.productPrice}
             currency={product.productCurrency.split(" ")[0]}
             key={product.id}
-            product={product}
         />
     ))
 
-    return(
-        <div className="product-area">
+    return (
+        <div className='onsale-area'>
             {cards}
         </div>
     )
 }
 
-export default ProductsArea
+export default OnSaleArea

@@ -5,6 +5,7 @@ import './productsContainer.css'
 import axios from '../../axios'
 import ProductsArea from '../../components/productsArea/productsArea'
 import Pagination from '../../components/pagination/pagination'
+import OnSaleArea from '../../components/onSaleArea/onSaleArea'
 
 const ProductsContainer = (props) => {
 
@@ -24,6 +25,8 @@ const ProductsContainer = (props) => {
     useEffect(() => {
         getProducts()
     }, [])
+
+    const onSaleProducts = products.filter(product => product.onSale === true)
 
     const indexOfLastProduct = currentPage * productsPerPage
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage
@@ -47,6 +50,9 @@ const ProductsContainer = (props) => {
     } else {
         return (
             <div className='products-container'>
+                <OnSaleArea 
+                    onSaleProducts={onSaleProducts}
+                />
                 <ProductsArea 
                     products={currentProducts}
                 />
