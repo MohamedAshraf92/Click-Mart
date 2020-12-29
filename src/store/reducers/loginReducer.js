@@ -10,13 +10,13 @@ const reducer = (state = initialState, action) => {
             case actionTypes.LOGIN :
                 return {
                     ...state,
-                    user: JSON.parse(localStorage.getItem('user')),
+                    user: action.user,
                     isLogged: action.isLogged
                 }
             case actionTypes.SIGNOUT :
                 return {
                     ...state,
-                    user: localStorage.removeItem('user'),
+                    user: {},
                     isLogged: action.isLogged
                 }
             case actionTypes.ADD_TO_CART :

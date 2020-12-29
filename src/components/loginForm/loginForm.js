@@ -16,8 +16,7 @@ const LoginForm = props => {
             const user = res.data.find(user => user.email === enteredEmail)
             if (user) {
                 const isLogged = true
-                localStorage.setItem('user', JSON.stringify(user))
-                dispatch(login(isLogged))
+                dispatch(login(user, isLogged))
             } else {window.alert('User dosen\'t exist')}
         })
         .catch(error => {window.alert('Can\'t get users data')})

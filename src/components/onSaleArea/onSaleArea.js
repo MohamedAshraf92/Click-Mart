@@ -13,12 +13,16 @@ const OnSaleArea = (props) => {
             price={product.productPrice}
             currency={product.productCurrency.split(" ")[0]}
             key={product.id}
+            product={product}
         />
     ))
 
     return (
         <div className='onsale-area'>
-            {cards}
+            <h2>YOUR ONSALE PRODUCTS:</h2>
+            <div className='onsale-products'>
+                {cards}
+            </div>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import './sideBar.css'
 import defualtIMG from '../../assets/defaultIMG.png'
@@ -7,6 +8,7 @@ import defualtIMG from '../../assets/defaultIMG.png'
 const SideBar = (props) => {
 
     const user = useSelector(state => state.loginReducer.user)
+    const history = useHistory()
 
     const [src, setSrc] = useState(user.avatar)
     const [errored, setErrored] = useState(false)
@@ -30,6 +32,7 @@ const SideBar = (props) => {
                         onError={onErrorHandler}
                     />
                 </div>
+                <button onClick={() => history.replace('/')} >Back to Store?</button>
             </div>
         )
     } else {
@@ -45,6 +48,7 @@ const SideBar = (props) => {
                     />
                 </div>
                 <p>You have {user.shoppingCart.length} items in your cart</p>
+                <button onClick={() => history.replace('/')} >Back to Store?</button>
             </div>
         )
     }
