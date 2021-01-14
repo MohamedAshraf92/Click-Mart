@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import Modal from 'react-modal'
 
 import './navigationBar.css'
 import Logo from '../logo'
@@ -18,8 +17,6 @@ const NavigationBar = (props) => {
 
     const [src, setSrc] = useState(user.avatar)
     const [errored, setErrored] = useState(false)
-    // const [click, setClick] = useState(false)
-    // const [menuModalIsOpen, setMenuModalIsOpen] = useState(false)
 
     const history = useHistory()
 
@@ -35,18 +32,6 @@ const NavigationBar = (props) => {
             setErrored(true)
         }
     }
-
-    // if (window.screen.width < 480) {
-    //     setClick(true)
-    // } else {
-    //     setClick(false)
-    // }
-
-    // const openMenuModal = () => {
-    //     if (click) {
-    //         setMenuModalIsOpen(true)
-    //     }
-    // }
 
     if (userIsSeller) {
         return (
@@ -73,11 +58,6 @@ const NavigationBar = (props) => {
                         />
                     </div>
                 </div>
-                {/*<Modal isOpen={menuModalIsOpen} onRequestClose={() => setMenuModalIsOpen(false)} >
-                    <div>
-                    menu modal
-                    </div>
-        </Modal>*/}
             </div>
         )
     } else {
