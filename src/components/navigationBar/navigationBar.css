@@ -20,6 +20,10 @@
     align-items: center;
 }
 
+.brand img:hover {
+    cursor: pointer;
+}
+
 .brand p {
     color: white;
     font-family: 'Indie Flower', cursive;
@@ -71,7 +75,22 @@
     margin: 2px;
 }
 
+.side-profile-picture {
+    display: none;
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    margin: 2px;
+}
+
 .nav-profile-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.side-profile-picture img {
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -95,4 +114,74 @@
     margin: 0;
     padding: 0 5px 10px 0;
     color: whitesmoke;
+}
+
+.side-drawer {
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    right: 0;
+    top: 70px;
+    background-color: #303030;
+    border: none;
+}
+
+.side-drawer:focus {
+    border: none;
+    outline: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: transparent;
+}
+
+.side-drawer ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.side-drawer li {
+    display: inline;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    list-style: none;
+    margin: 0 5px;
+}
+
+.side-drawer .link {
+    text-decoration: none;
+    background-color: transparent;
+    color: cornsilk;
+    border: none;
+    font-size: larger;
+    padding-left: 0;
+}
+
+.side-drawer li button:focus {
+    outline: none;
+}
+
+@media (max-width: 480px) {
+    .nav-items ul {
+        display: none;
+    }
+
+    .nav-profile-picture {
+        display: none;
+    }
+
+    .side-profile-picture {
+        display: block;
+    }
 }

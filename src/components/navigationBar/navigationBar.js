@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import Modal from 'react-modal'
 
 import './navigationBar.css'
 import Logo from '../logo'
@@ -17,8 +18,13 @@ const NavigationBar = (props) => {
 
     const [src, setSrc] = useState(user.avatar)
     const [errored, setErrored] = useState(false)
+    const [sideDrawerModal, setSideDrawerModal] = useState(false)
 
     const history = useHistory()
+
+    const backToStore = () => {
+        history.replace('/store')
+    }
 
     const signOutHandler = () => {
         const isLogged = false
@@ -33,11 +39,19 @@ const NavigationBar = (props) => {
         }
     }
 
+    const openSideDrawer = () => {
+        setSideDrawerModal(true)
+    }
+
+    const closeSideDrawer = () => {
+        setSideDrawerModal(false)
+    }
+
     if (userIsSeller) {
         return (
             <div className='nav-bar'>
                 <div className='brand'>
-                    <Logo size={{ height: '60px' }} />
+                    <Logo size={{ height: '60px' }} clicked={backToStore} />
                     <p>Click Mart</p>
                 </div>
                 <div className='nav-items'>
@@ -54,17 +68,36 @@ const NavigationBar = (props) => {
                         src={src} 
                         alt='user profile avatar'
                         onError={onErrorHandler}
-                        
+                        />
+                    </div>
+                    <div className='side-profile-picture'>
+                        <img 
+                        src={src} 
+                        alt='user profile avatar'
+                        onError={onErrorHandler}
+                        onClick={openSideDrawer}
                         />
                     </div>
                 </div>
+                <Modal isOpen={sideDrawerModal} onRequestClose={closeSideDrawer} className='side-drawer' overlayClassName='overlay'>
+                    <div>
+                        <ul>
+                            <li>
+                                <NavLink className='link' to='/addProduct' onClick={closeSideDrawer} >Add Product</NavLink>
+                            </li>
+                            <li>
+                                <button className='link' onClick={signOutHandler}>Sign out</button>
+                            </li>
+                        </ul>
+                    </div>
+                </Modal>
             </div>
         )
     } else {
         return (
             <div className='nav-bar'>
                 <div className='brand'>
-                    <Logo size={{ height: '50px'}} />
+                    <Logo size={{ height: '60px'}} clicked={backToStore} />
                     <p>Click Mart</p>
                 </div>
                 <div className='nav-items'>
@@ -87,7 +120,27 @@ const NavigationBar = (props) => {
                             onError={onErrorHandler}
                         />
                     </div>
+                    <div className='side-profile-picture'>
+                        <img 
+                        src={src} 
+                        alt='user profile avatar'
+                        onError={onErrorHandler}
+                        onClick={openSideDrawer}
+                        />
+                    </div>
                 </div>
+                <Modal isOpen={sideDrawerModal} onRequestClose={closeSideDrawer} className='side-drawer' overlayClassName='overlay'>
+                    <div>
+                        <ul>
+                            <li>
+                                <NavLink exact className='link' to='/shoppingCart' onClick={closeSideDrawer} >Shopping Cart</NavLink>
+                            </li>
+                            <li>
+                                <button className='link' onClick={signOutHandler}>Sign out</button>
+                            </li>
+                        </ul>
+                    </div>
+                </Modal>
             </div>
         )
     }
