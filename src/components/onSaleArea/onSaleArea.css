@@ -1,9 +1,10 @@
 .onsale-area {
     width: 100%;
+    box-sizing: border-box;
     margin-bottom: 10px;
-    background-color: darkcyan;
     border-radius: 10px;
-    padding: 4px;
+    padding: 4px 17px;
+    color: white;
 }
 
 .onsale-products {
@@ -16,25 +17,23 @@
 }
 
 .onsale-products .card {
-    margin: 5px 5px 12px 5px;
+    margin: 5px 10px 5px 10px;
 }
 
-/* .onsale-area::-webkit-scrollbar {
-    width: 5px;
-  }
+.onsale-products::-webkit-scrollbar {
+    height: 10px;
+}
   
-  .onsale-area::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
+.onsale-products::-webkit-scrollbar-track {
+    background: #3ca4e9;
+    border-radius: 10px;
+}
   
-  .onsale-area::-webkit-scrollbar-thumb {
-    background: #888;
-  }
+.onsale-products::-webkit-scrollbar-thumb {
+    background: rgb(88, 90, 230);
+    border-radius: 10px;
+}
   
-  .onsale-area::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  } */
-
-/* .onsale-area div {
-    margin-right: 10px;
-} */
+.onsale-products::-webkit-scrollbar-thumb:hover {
+    background: darkslateblue;
+}

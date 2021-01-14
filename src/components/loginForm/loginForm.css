@@ -4,7 +4,7 @@
     border-color: whitesmoke;
     border-radius: 15px;
     outline: none;
-    width: 400px;
+    width: 310px;
     color: skyblue;
     font-size: large;
     text-align: center;
@@ -24,6 +24,8 @@
 }
 
 .submit:hover {
-    background-color: brown;
+    background-color: rgb(82, 82, 182);
+    color: white;
     transition: 0.2s;
+    cursor: pointer;
 }

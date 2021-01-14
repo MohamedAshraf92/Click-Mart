@@ -1,13 +1,9 @@
 .outer-frame {
     width: 100%;
     box-sizing: border-box;
+    background-color: #1d1d1d;
 }
 
 .layout-container {
-    width: 80%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     margin: auto;
 }

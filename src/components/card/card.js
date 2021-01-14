@@ -25,25 +25,29 @@ const Card = (props) => {
                 <div className="photo">
                     <img src={props.photo} alt="product pic" />
                 </div>
-                <h2 className="prod-name">{props.name}</h2>
-                <h3 className="prod-disc">{props.desc}</h3>
-                <h3 className="price">{props.price}<span className="curency">{props.currency}</span></h3>
-                <Link to={`/editProduct/${props.id}`} className="edit-btn">Edit product</Link>
+                <p className="prod-name">{props.name}</p>
+                <p className="prod-disc">{props.desc}</p>
+                <div className="price-and-add">
+                    <p className="price">{props.price}<span className="curency">{props.currency}</span></p>
+                    <Link to={`/editProduct/${props.id}`} className="edit-btn">Edit product</Link>
+                </div>
             </div>
         )
     } else {
         return (
             <div className="card">
-                <div className="photo">
-                    <Link to={`/store/${props.id}`}>
-                        <img src={props.photo} alt="product pic" />
-                    </Link>
-                </div>
-                <h2 className="prod-name">{props.name}</h2>
-                <h3 className="prod-disc">{props.desc}</h3>
-                <h3 className="price">{props.price}<span className="curency">{props.currency}</span></h3>
+            <div className="photo">
+                <Link to={`/store/${props.id}`}>
+                    <img src={props.photo} alt="product pic" />
+                </Link>
+            </div>
+            <p className="prod-name">{props.name}</p>
+            <p className="prod-disc">{props.desc}</p>
+            <div className="price-and-add">
+                <p className="price">{props.price}<span className="curency">{props.currency}</span></p>
                 <button className="add-btn" onClick={addToCartHandler}>ADD TO CART</button>
             </div>
+        </div>
         )
     }
 

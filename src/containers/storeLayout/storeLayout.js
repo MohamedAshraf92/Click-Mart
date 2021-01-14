@@ -2,7 +2,6 @@ import React from 'react'
 
 import './storeLayout.css'
 import NavigationBar from '../../components/navigationBar/navigationBar'
-import SideBar from '../../components/sideBar/sideBar'
 
 const StoreLayout = (props) => {
 
@@ -10,7 +9,6 @@ const StoreLayout = (props) => {
         <div className='outer-frame'>
             <NavigationBar/>
             <div className="layout-container" >
-                <SideBar/>
                 {props.children}
             </div>
         </div>

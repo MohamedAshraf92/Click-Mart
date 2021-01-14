@@ -10,7 +10,7 @@ const ProductsArea = (props) => {
             photo={product.productImage}
             name={product.product}
             desc={product.productDescription}
-            price={product.productPrice}
+            price={product.productPrice.split(".")[0]}
             currency={product.productCurrency.split(" ")[0]}
             key={product.id}
             product={product}

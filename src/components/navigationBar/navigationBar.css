@@ -1,7 +1,8 @@
 .nav-bar {
     width: 100%;
-    height: 50px;
-    background-color: rgb(30, 27, 49);
+    height: 70px;
+    background-color: #191919;
+    border-bottom: solid 1px #2f2f2f;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -11,6 +12,7 @@
 }
 
 .brand {
+    height: 70px;
     padding-left: 20px;
     display: flex;
     flex-direction: row;
@@ -19,14 +21,16 @@
 }
 
 .brand p {
-    color: cornflowerblue;
+    color: white;
     font-family: 'Indie Flower', cursive;
-    font-size: 20px;
-    margin: 0 5px;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: auto 5px;
 }
 
 .nav-items {
-    height: 50px;
+    height: 70px;
+    margin: auto 5px;
     padding-right: 20px;
     display: flex;
     flex-direction: row;
@@ -42,7 +46,6 @@
     text-decoration: none;
     box-sizing: border-box;
     margin: 2px;
-    background-color: rgb(102, 147, 168);
     padding: 5px;
     border-radius: 5px;
     list-style: none;
@@ -51,10 +54,10 @@
 
 .nav-items .link {
     text-decoration: none;
+    background-color: transparent;
     color: cornsilk;
-    background-color: rgb(102, 147, 168);
     border: none;
-    font-size: 1em;
+    font-size: larger;
 }
 
 .nav-items li button:focus {
@@ -72,7 +75,7 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    background-color: rgb(102, 147, 168);
+    background-color: white;
 }
 
 .nav-items .link:hover,
@@ -82,9 +85,8 @@
 
 .cart-plugin {
     box-sizing: border-box;
-    background-color: rgb(102, 147, 168);
     border-radius: 5px;
-    margin: 0 5px;
+    margin: auto 5px;
     display: flex;
     align-items: center;
 }

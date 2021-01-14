@@ -1,49 +1,61 @@
 .card {
-    width: 24%;
-    height: 22rem;
-    background-color: rgb(100, 232, 237);
+    width: 22%;
+    height: 19rem;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 20px;
-    transition: transform 0.3s;
     flex-shrink: 0;
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
-
 .photo {
-    width: 92%;
+    height: 180px;
     margin: 10px auto;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .photo img {
     width: 100%;
+    max-width: 100%;
     border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.photo img:hover {
+    transform: scale(1.05);
 }
 
 .prod-name {
-    text-align: center;
-    margin: auto;
+    font-size: 1.2rem;
+    color: white;
+    font-family: sans-serif;
+    margin: 5px 0;
 }
 
 .prod-disc {
-    text-align: center;
+    font-size: 0.8rem;
     margin: auto;
+    color: white;
+    font-family: sans-serif;
+}
+
+.price-and-add {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .price {
-    text-align: center;
-    font-weight: bold;
     font-size: xx-large;
-    margin: auto;
+    margin: 5px 0;
+    color: white;
+    font-family: sans-serif;
 }
 
 .curency {
     font-size: small;
+    color: white;
 }
 
 .edit-btn:link,
@@ -52,7 +64,6 @@
     height: 40px;
     width: 100px;
     border-radius: 10px;
-    margin:0 auto 10px auto;
     text-align: center;
     text-decoration: none;
     line-height: 35px;
@@ -64,8 +75,8 @@
     background-color: darkslateblue;
     height: 40px;
     width: 130px;
+    font-weight: bold;
     border-radius: 10px;
-    margin:0 auto 10px auto;
     text-align: center;
     text-decoration: none;
     line-height: 35px;
@@ -76,19 +87,25 @@
 
 .add-btn:hover {
     cursor: pointer;
+    background-color: rgb(10, 155, 65);
 }
 
 @media (max-width: 992px) {
     .card {
-        width: 32%;
-        height: 20rem;
+        width: 31%;
+        height: 18rem;
     }
 }
 
 @media (max-width: 480px) {
     .card {
         width: 47%;
-        height: 19rem;
+        height: 15.5rem;
+    }
+
+    .photo {
+        height: 140px;
+        margin: 10px auto;
     }
 
     .add-btn,
@@ -106,10 +123,38 @@
         text-align: center;
         font-weight: bold;
         font-size: large;
-        margin: auto;
+        margin: 5px 0;
     }
     
     .curency {
         font-size: small;
+    }
+}
+
+@media (max-width: 360px) {
+    .card {
+        height: 13rem;
+    }
+
+    .photo {
+        height: 100px;
+        margin: 10px auto;
+    }
+
+    .price {
+        text-align: center;
+        font-size: medium;
+        margin: 5px 0;
+    }
+    
+    .curency {
+        font-size: x-small;
+    }
+
+    .edit-btn {
+    height: 30px;
+    width: 60px;
+    line-height: 35px;
+    font-size: 0.8rem;
     }
 }

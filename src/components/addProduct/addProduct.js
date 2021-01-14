@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom'
 
 import './addProduct.css'
 import axios from '../../axios'
+import newProductImage from '../../assets/new_product.png'
 
 const AddProduct = (props) => {
     const [newProduct, setNewProduct] = useState({})
@@ -56,50 +57,56 @@ const AddProduct = (props) => {
     }
 
     return (
-        <div className='add-product-form'>
-            <h2>Complete the next form to add new product</h2>
-            <form onSubmit={handleSubmit(onSumbit)}>
-                <div className='form-row'>
-                    <label>Product Name</label>
-                    <input type='text' name='product' ref={register}/>
-                </div>
+        <div className='add-product'>
+            <div className='new-product-banner'>
+                <img src={newProductImage} alt='New product banner'/>
+                <p>ADD MORE PRODUCTS TO YOUR STORE.<br/>SPREAD YOUR INVESTMENT, INCREASE YOUR INCOME</p>
+            </div>
+            <div className='add-product-form'>
+                <h2>Complete the next form to add new product</h2>
+                <form onSubmit={handleSubmit(onSumbit)}>
+                    <div className='form-row'>
+                        <label>Product Name</label>
+                        <input type='text' name='product' ref={register}/>
+                    </div>
 
-                <div className='form-row'>
-                    <label>Product Description</label>
-                    <input type='text' name='productDescription' ref={register}/>
-                </div>
+                    <div className='form-row'>
+                        <label>Product Description</label>
+                        <input type='text' name='productDescription' ref={register}/>
+                    </div>
 
-                <div className='form-row'>
-                    <label>Product Count</label>
-                    <input type='number' name='productCount' ref={register}/>
-                </div>
+                    <div className='form-row'>
+                        <label>Product Count</label>
+                        <input type='number' name='productCount' ref={register}/>
+                    </div>
 
-                <div className='form-row'>
-                    <label>Product Price</label>
-                    <input type='number' name='productPrice' ref={register}/>
-                </div>
+                    <div className='form-row'>
+                        <label>Product Price</label>
+                        <input type='number' name='productPrice' ref={register}/>
+                    </div>
 
-                <div className='form-row'>
-                    <label>Product Currency</label>
-                    <input type='text' name='productCurrency' ref={register}/>
-                </div>
+                    <div className='form-row'>
+                        <label>Product Currency</label>
+                        <input type='text' name='productCurrency' ref={register}/>
+                    </div>
 
-                <div className='form-row'>
-                    <label>Product Image URL</label>
-                    <input type='text' name='productImage' ref={register}/>
-                </div>
+                    <div className='form-row'>
+                        <label>Product Image URL</label>
+                        <input type='text' name='productImage' ref={register}/>
+                    </div>
 
-                <div className='form-row'>
-                    <label>Product Category</label>
-                    <input type='text' name='productCategory' ref={register}/>
-                </div>
+                    <div className='form-row'>
+                        <label>Product Category</label>
+                        <input type='text' name='productCategory' ref={register}/>
+                    </div>
 
-                <div className='form-row'>
-                    <label>Product Onsale?</label>
-                    <input type='checkbox' name='onSale' ref={register}/>
-                </div>
-            </form>
-            <button className='add-product-btn' type="submit">ADD PRODUCT</button>
+                    <div className='form-row'>
+                        <label>Product Onsale?</label>
+                        <input type='checkbox' name='onSale' ref={register}/>
+                    </div>
+                </form>
+                <button className='add-product-btn' type="submit">ADD PRODUCT</button>
+            </div>
         </div>
     )
 }

@@ -1,8 +1,9 @@
 .shopping-cart {
-    width: 80%;
+    max-width: 1170px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
 }
 
 .cart-items {
@@ -28,7 +29,7 @@
 
 .purchase-btn:hover {
     cursor: pointer;
-    transform: scale(1.08);
+    transform: scale(1.03);
 }
 
 .confirm-purchase-modal {
