@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import LazyLoad from 'react-lazyload'
 
 import './card.css'
 import { addToCart } from '../../store/actions/loginActions'
@@ -39,7 +39,9 @@ const Card = (props) => {
             <div className="card">
             <div className="photo">
                 <Link to={`/store/${props.id}`}>
-                    <LazyLoadImage effect="blur" src={props.photo} alt="product pic" />
+                <LazyLoad>
+                    <img src={props.photo} alt="product pic" />
+                </LazyLoad>
                 </Link>
             </div>
             <p className="prod-name">{props.name}</p>
