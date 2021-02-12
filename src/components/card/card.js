@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import LazyLoad from 'react-lazyload'
+import noImageFound from '../../assets/noImageFound.png'
 
 import './card.css'
 import { addToCart } from '../../store/actions/loginActions'
@@ -12,6 +12,9 @@ const Card = (props) => {
     const dispatch = useDispatch()
     const shoppingCart = useSelector(state => state.loginReducer.user.shoppingCart)
 
+    const [src, setSrc] = useState(props.photo)
+    const [errored, setErrored] = useState(false)
+
     const addToCartHandler = () => {
         const clickedProduct = props.product
         const productExist = shoppingCart.find(item => item.id === clickedProduct.id)
@@ -20,11 +23,18 @@ const Card = (props) => {
         }
     }
 
+    const onErrorHandler = () => {
+        if (!errored) {
+            setSrc(noImageFound)
+            setErrored(true)
+        }
+    }
+
     if (userIsSeller) {
         return (
             <div className="card">
                 <div className="photo">
-                    <img src={props.photo} alt="product pic" />
+                    <img src={src} alt="product pic" onError={onErrorHandler} />
                 </div>
                 <p className="prod-name">{props.name}</p>
                 <p className="prod-disc">{props.desc}</p>
@@ -39,9 +49,7 @@ const Card = (props) => {
             <div className="card">
             <div className="photo">
                 <Link to={`/store/${props.id}`}>
-                <LazyLoad>
-                    <img src={props.photo} alt="product pic" />
-                </LazyLoad>
+                    <img src={src} alt="product pic" onError={onErrorHandler} />
                 </Link>
             </div>
             <p className="prod-name">{props.name}</p>
