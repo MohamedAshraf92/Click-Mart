@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import noImageFound from '../../assets/noImageFound.png'
 
 import './card.css'
 import { addToCart } from '../../store/actions/loginActions'
+import noImageFound from '../../assets/noImageFound.png'
 
 const Card = (props) => {
 

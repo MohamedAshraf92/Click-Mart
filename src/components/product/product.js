@@ -4,12 +4,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import './product.css'
 import axios from '../../axios'
 import { addToCart } from '../../store/actions/loginActions'
+import noImageFound from '../../assets/noImageFound.png'
 
 const Product = (props) => {
 
     const [product, setProduct] = useState({})
     const [currency, setCurrency] = useState('')
     const [date, setDate] = useState('')
+    const [src, setSrc] = useState(product.productImage)
+    const [errored, setErrored] = useState(false)
+
 
     const productID =  props.match.params.id
 
@@ -38,10 +42,17 @@ const Product = (props) => {
         }
     }
 
+    const onErrorHandler = () => {
+        if (!errored) {
+            setSrc(noImageFound)
+            setErrored(true)
+        }
+    }
+
     return (
         <div className='product'>
             <div className='photo-product'>
-                <img src={product.productImage} alt={product.product} />
+                <img src={src} alt={product.product} onError={onErrorHandler} />
             </div>
             <div className='product-info'>
                 <h1>{product.product}</h1>

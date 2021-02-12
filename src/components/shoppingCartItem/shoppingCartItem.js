@@ -4,10 +4,13 @@ import { useDispatch } from 'react-redux'
 import './shoppingCartItem.css'
 import MdTrash from 'react-ionicons/lib/MdTrash'
 import { removeFromCart } from '../../store/actions/loginActions'
+import noImageFound from '../../assets/noImageFound.png'
 
 const ShoppingCartItem = (props) => {
     
     const [quantity, setQuantity] = useState(1)
+    const [src, setSrc] = useState(props.image)
+    const [errored, setErrored] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -18,10 +21,17 @@ const ShoppingCartItem = (props) => {
         console.log('delete')
     }
 
+    const onErrorHandler = () => {
+        if (!errored) {
+            setSrc(noImageFound)
+            setErrored(true)
+        }
+    }
+
     return (
         <div className='cart-item'>
             <div className='rapper'>
-                <img className='cart-item-image' src={props.image} alt={props.productName} />
+                <img className='cart-item-image' src={src} alt={props.productName}  onError={onErrorHandler} />
             </div>
             <div className='rapper'>
                 <p className='cart-item-name'>{props.productName}</p>

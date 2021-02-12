@@ -4,6 +4,7 @@ import Modal from 'react-modal'
 
 import './editProduct.css'
 import axios from '../../axios'
+import noImageFound from '../../assets/noImageFound.png'
 
 const EditProduct = ({ match }) => {
 
@@ -14,6 +15,8 @@ const EditProduct = ({ match }) => {
     const [newAmount, setNewAmount] = useState('')
     const [sale, setSale] = useState(product.onSale)
     const [modalIsOpen, setModalIsOpen] = useState(false)
+    const [src, setSrc] = useState(product.productImage)
+    const [errored, setErrored] = useState(false)
 
     const history = useHistory()
 
@@ -88,10 +91,17 @@ const EditProduct = ({ match }) => {
         .catch(err => window.alert('WRONG'))
     }
 
+    const onErrorHandler = () => {
+        if (!errored) {
+            setSrc(noImageFound)
+            setErrored(true)
+        }
+    }
+
     return (
         <div className='edit-product'>
             <div className='photo-edit-product'>
-                <img src={product.productImage} alt={product.product} />
+                <img src={src} alt={product.product} onError={onErrorHandler} />
             </div>
             <div className='edit-info'>
                 <div className='info-edit-product'>
@@ -132,5 +142,3 @@ const EditProduct = ({ match }) => {
 }
 
 export default EditProduct
-
-// onChange={(event) => setSale(event.target.checked)}
